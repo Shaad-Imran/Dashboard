@@ -15,3 +15,10 @@ for (const iterator of menuBtn) {
     this.nextElementSibling.classList.toggle("active");
   });
 }
+
+// load more btn loading spin toggle
+const loadMoreBtn = document.querySelector("[data-load-more]");
+
+loadMoreBtn.addEventListener("click", function () {
+  this.classList.toggle("active");
+});
