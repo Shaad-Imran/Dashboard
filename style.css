@@ -755,6 +755,46 @@ body {
   display: block;
 }
 
+/* ..Footer..  */
+.footer {
+  background: var(--white);
+  padding-block: 25px;
+}
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer-link,
+.copyright {
+  color: var(--davys-gray);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+}
+
+.footer-link,
+.copyright-link {
+  display: inline-block;
+  transition: var(--transition);
+}
+
+:is(.footer-link, .copyright-link):is(:hover, :focus) {
+  color: var(--blue-ryb);
+}
+
+.footer-item:not(:last-child)::after {
+  content: "-";
+  color: hsl(0, 0%, 80%);
+  font-weight: var(--fw-600);
+  margin-inline: 5px;
+}
+
+.copyright-link {
+  color: inherit;
+}
 /* .....Responsiveness.....  */
 @media (min-width: 400px) {
   .revenue-item:first-child {
@@ -784,6 +824,15 @@ body {
 
   .tasks .card-meta-list {
     justify-content: flex-end;
+  }
+
+  .copyright {
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .footer-list {
+    justify-content: center;
   }
 }
 
@@ -871,6 +920,24 @@ body {
   .tasks .task-card {
     grid-template-columns: 1fr 0.5fr 0.5fr;
     align-items: center;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-list {
+    justify-content: flex-start;
+  }
+  .copyright {
+    width: max-content;
+    margin-inline: 0;
+  }
+
+  .footer .card-divider {
+    display: none;
   }
 }
 
